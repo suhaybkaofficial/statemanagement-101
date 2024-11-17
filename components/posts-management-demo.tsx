@@ -87,7 +87,7 @@ export default function PostsManagementDemo() {
               <div className="relative">
                 <pre className="p-4 rounded-lg bg-black/50 text-xs overflow-x-auto">
                   <code className="text-gray-200">
-                  {`// posts-context.tsx
+                  {`
                   const PostsContext = createContext<PostsContextType>({
                     posts: [],
                     loading: false,
@@ -163,7 +163,7 @@ export default function PostsManagementDemo() {
               <div className="relative">
                 <pre className="p-4 rounded-lg bg-black/50 text-xs overflow-x-auto">
                   <code className="text-gray-200">
-                  {`// posts-slice.ts
+                  {`
                   export const fetchPosts = createAsyncThunk(
                     'posts/fetchPosts',
                     async () => {
@@ -238,7 +238,7 @@ export default function PostsManagementDemo() {
               <div className="relative">
                 <pre className="p-4 rounded-lg bg-black/50 text-xs overflow-x-auto">
                   <code className="text-gray-200">
-                  {`// posts-store.ts
+                  {`
                   interface PostsStore {
                     posts: Post[];
                     loading: boolean;
