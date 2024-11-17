@@ -14,11 +14,12 @@ import {
 } from "@tabler/icons-react";
 import { useCounter } from "@/lib/store/context/counter-context";
 import { useCounterStore } from "@/lib/store/zustand/counter-store";
+import type { RootState } from "@/lib/store/redux/store";
 
 export default function CounterManagementDemo() {
-  // Redux Counter
+  // Redux Counter - properly typed state
   const dispatch = useDispatch();
-  const reduxCount = useSelector((state: any) => state.counter.count);
+  const reduxCount = useSelector((state: RootState) => state.counter.count);
 
   // Context Counter
   const {

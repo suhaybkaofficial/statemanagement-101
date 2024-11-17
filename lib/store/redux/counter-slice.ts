@@ -3,26 +3,26 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 interface CounterState {
-  value: number;
+  count: number;
 }
 
 const counterSlice = createSlice({
   name: 'counter',
   initialState: {
-    value: 0,
+    count: 0,
   } as CounterState,
   reducers: {
     increment: (state) => {
-      state.value += 1;
+      state.count += 1;
     },
     decrement: (state) => {
-      state.value -= 1;
+      state.count -= 1;
     },
-    reset:(state)=>{
-      state.value=0
+    reset: (state) => {
+      state.count = 0;
     }
   },
 });
 
-export const { increment, decrement ,reset} = counterSlice.actions;
+export const { increment, decrement, reset } = counterSlice.actions;
 export default counterSlice.reducer; 
