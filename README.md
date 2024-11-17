@@ -37,6 +37,7 @@ A comprehensive demonstration of different state management approaches in React,
 
 ## 📦 Project Structure
 
+
 ├── app/
 │   ├── api/
 │   │   └── posts/          # API routes for server-side
