@@ -72,7 +72,6 @@
 │   └── types/            # TypeScript types
 
 ## 🔍 Component Overview
-## Component Overview
 
 ### State Management Components:
 
@@ -128,8 +127,67 @@
 * Matching theme colors
 * Clear typography
 
-## Getting Started
+## 💡 Implementation Details
+
+### State Management Approaches
+
+1. **Redux Toolkit**
+   - Centralized state management
+   - DevTools integration
+   - Predictable state updates
+   - Best for: Large applications with complex state
+   - Features: Actions, reducers, thunks
+   - Built-in TypeScript support
+
+2. **Context API**
+   - Built into React
+   - No external dependencies
+   - Component-level state sharing
+   - Best for: Small to medium applications
+   - Features: Context providers, consumers, hooks
+   - Simple state updates
+
+3. **Zustand**
+   - Minimal boilerplate
+   - Simple API
+   - Great performance
+   - Best for: Quick implementations and prototypes
+   - Features: Custom hooks, automatic updates
+   - TypeScript support out of the box
+
+### Server-Side Features
+
+1. **Next.js App Router**
+   - Server components
+   - API routes
+   - Streaming and Suspense
+   - Optimized data fetching
+   - Automatic caching
+   - Route handlers
+
+2. **Error Handling**
+   - Error boundaries
+   - Fallback components
+   - Loading states
+   - Graceful degradation
+   - Type-safe error handling
+
+3. **Performance**
+   - Automatic caching
+   - Optimized rendering
+   - Code splitting
+   - Progressive enhancement
+   - Image optimization
+   - Edge runtime support
+
+## 🚀 Getting Started
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/suhaybkaofficial/statemanagement-101.git
+git clone https://github.com/suhaybkaofficial/statemanagement-101.git
+
+2. Install dependencies:
+npm install
+
+3. Run the development server:
+npm run dev
+
