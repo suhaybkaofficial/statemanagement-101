@@ -3,8 +3,8 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchPosts } from '@/lib/store/redux/posts-slice';
-import { usePosts } from '@/lib/store/posts-context';
-import { usePostsStore } from '@/lib/store/posts-store';
+import { usePosts } from '@/lib/store/context/posts-context';
+import { usePostsStore } from '@/lib/store/zustand/posts-store';
 import { Button } from '@/components/ui/button';
 import { Card3D } from '@/components/ui/card-3d';
 import {

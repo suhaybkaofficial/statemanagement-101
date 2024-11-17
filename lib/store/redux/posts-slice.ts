@@ -27,9 +27,7 @@ const postsSlice = createSlice({
     loading: false,
     error: null,
   } as PostsState,
-  reducers: {
-    // Regular reducers can be added here for synchronous actions
-  },
+  reducers: {},
   // Handle async action states using builder callback
   extraReducers: (builder) => {
     builder

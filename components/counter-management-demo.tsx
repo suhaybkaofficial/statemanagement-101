@@ -2,8 +2,6 @@
 
 import { useDispatch, useSelector } from "react-redux";
 import { increment, decrement, reset } from "@/lib/store/redux/counter-slice";
-import { useCounter } from "@/lib/store/counter-context";
-import { useCounterStore } from "@/lib/store/counter-store";
 import { Button } from "@/components/ui/button";
 import { Card3D } from "@/components/ui/card-3d";
 import {
@@ -14,8 +12,10 @@ import {
   IconMinus,
   IconRefresh,
 } from "@tabler/icons-react";
+import { useCounter } from "@/lib/store/context/counter-context";
+import { useCounterStore } from "@/lib/store/zustand/counter-store";
 
-export default function StateManagementDemo() {
+export default function CounterManagementDemo() {
   // Redux Counter
   const dispatch = useDispatch();
   const reduxCount = useSelector((state: any) => state.counter.count);
