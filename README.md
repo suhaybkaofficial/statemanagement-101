@@ -145,7 +145,7 @@ A comprehensive demonstration of different state management approaches in React,
 ## 🚀 Getting Started
 
 1. Clone the repository:
-git clone https://github.com/yourusername/state-management-demo.git
+git clone https://github.com/suhaybkaofficial/statemanagement-101.git
 
 2. Install dependencies:
 npm install
