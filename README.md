@@ -39,23 +39,40 @@ A comprehensive demonstration of different state management approaches in React,
 
 
 ├── app/
-│   ├── api/
-│   │   └── posts/          # API routes for server-side
-│   ├── posts/             # Server-side posts page
-│   └── page.tsx           # Client-side demo page
+
+│   ├── api/
+
+│   │   └── posts/          # API routes for server-side
+
+│   ├── posts/             # Server-side posts page
+
+│   └── page.tsx           # Client-side demo page
+
 ├── components/
-│   ├── layout/            # Layout components
-│   │   └── site-header.tsx
-│   ├── counter-management-demo.tsx
-│   ├── posts-management-demo.tsx
-│   ├── posts-server.tsx
-│   └── ui/               # Reusable UI components
+
+│   ├── layout/            # Layout components
+
+│   │   └── site-header.tsx
+
+│   ├── counter-management-demo.tsx
+
+│   ├── posts-management-demo.tsx
+
+│   ├── posts-server.tsx
+
+│   └── ui/               # Reusable UI components
+
 ├── lib/
-│   ├── store/            # State management implementations
-│   │   ├── redux/        # Redux implementation
-│   │   ├── zustand/      # Zustand implementation
-│   │   └── context/      # Context API implementation
-│   └── types/            # TypeScript types
+
+│   ├── store/            # State management implementations
+
+│   │   ├── redux/        # Redux implementation
+
+│   │   ├── zustand/      # Zustand implementation
+
+│   │   └── context/      # Context API implementation
+
+│   └── types/            # TypeScript types
 
 ## 🔍 Component Overview
 
