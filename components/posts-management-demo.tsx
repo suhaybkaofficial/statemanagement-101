@@ -87,41 +87,41 @@ export default function PostsManagementDemo() {
               <div className="relative">
                 <pre className="p-4 rounded-lg bg-black/50 text-xs overflow-x-auto">
                   <code className="text-gray-200">
-{`// posts-context.tsx
-const PostsContext = createContext<PostsContextType>({
-  posts: [],
-  loading: false,
-  error: null,
-  fetchPosts: async () => {},
-});
+                  {`// posts-context.tsx
+                  const PostsContext = createContext<PostsContextType>({
+                    posts: [],
+                    loading: false,
+                    error: null,
+                    fetchPosts: async () => {},
+                  });
 
-export function PostsProvider({ children }) {
-  const [posts, setPosts] = useState<Post[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+                  export function PostsProvider({ children }) {
+                    const [posts, setPosts] = useState<Post[]>([]);
+                    const [loading, setLoading] = useState(false);
+                    const [error, setError] = useState<string | null>(null);
 
-  const fetchPosts = async () => {
-    try {
-      setLoading(true);
-      const response = await fetch('/api/posts');
-      const data = await response.json();
-      setPosts(data);
-    } catch (err) {
-      setError('Failed to fetch posts');
-    } finally {
-      setLoading(false);
-    }
-  };
+                    const fetchPosts = async () => {
+                      try {
+                        setLoading(true);
+                        const response = await fetch('/api/posts');
+                        const data = await response.json();
+                        setPosts(data);
+                      } catch (err) {
+                        setError('Failed to fetch posts');
+                      } finally {
+                        setLoading(false);
+                      }
+                    };
 
-  return (
-    <PostsContext.Provider value={{
-      posts, loading, error, fetchPosts
-    }}>
-      {children}
-    </PostsContext.Provider>
-  );
-}`}
-                  </code>
+                    return (
+                      <PostsContext.Provider value={{
+                        posts, loading, error, fetchPosts
+                      }}>
+                        {children}
+                      </PostsContext.Provider>
+                    );
+                  }`}
+                                    </code>
                 </pre>
               </div>
             </div>
@@ -163,39 +163,39 @@ export function PostsProvider({ children }) {
               <div className="relative">
                 <pre className="p-4 rounded-lg bg-black/50 text-xs overflow-x-auto">
                   <code className="text-gray-200">
-{`// posts-slice.ts
-export const fetchPosts = createAsyncThunk(
-  'posts/fetchPosts',
-  async () => {
-    const response = await fetch('/api/posts');
-    return response.json();
-  }
-);
+                  {`// posts-slice.ts
+                  export const fetchPosts = createAsyncThunk(
+                    'posts/fetchPosts',
+                    async () => {
+                      const response = await fetch('/api/posts');
+                      return response.json();
+                    }
+                  );
 
-const postsSlice = createSlice({
-  name: 'posts',
-  initialState: {
-    posts: [],
-    loading: false,
-    error: null,
-  },
-  reducers: {},
-  extraReducers: (builder) => {
-    builder
-      .addCase(fetchPosts.pending, (state) => {
-        state.loading = true;
-        state.error = null;
-      })
-      .addCase(fetchPosts.fulfilled, (state, action) => {
-        state.posts = action.payload;
-        state.loading = false;
-      })
-      .addCase(fetchPosts.rejected, (state) => {
-        state.loading = false;
-        state.error = 'Failed to fetch posts';
-      });
-  },
-});`}
+                  const postsSlice = createSlice({
+                    name: 'posts',
+                    initialState: {
+                      posts: [],
+                      loading: false,
+                      error: null,
+                    },
+                    reducers: {},
+                    extraReducers: (builder) => {
+                      builder
+                        .addCase(fetchPosts.pending, (state) => {
+                          state.loading = true;
+                          state.error = null;
+                        })
+                        .addCase(fetchPosts.fulfilled, (state, action) => {
+                          state.posts = action.payload;
+                          state.loading = false;
+                        })
+                        .addCase(fetchPosts.rejected, (state) => {
+                          state.loading = false;
+                          state.error = 'Failed to fetch posts';
+                        });
+                    },
+                  });`}
                   </code>
                 </pre>
               </div>
@@ -238,29 +238,29 @@ const postsSlice = createSlice({
               <div className="relative">
                 <pre className="p-4 rounded-lg bg-black/50 text-xs overflow-x-auto">
                   <code className="text-gray-200">
-{`// posts-store.ts
-interface PostsStore {
-  posts: Post[];
-  loading: boolean;
-  error: string | null;
-  fetchPosts: () => Promise<void>;
-}
+                  {`// posts-store.ts
+                  interface PostsStore {
+                    posts: Post[];
+                    loading: boolean;
+                    error: string | null;
+                    fetchPosts: () => Promise<void>;
+                  }
 
-export const usePostsStore = create<PostsStore>((set) => ({
-  posts: [],
-  loading: false,
-  error: null,
-  fetchPosts: async () => {
-    try {
-      set({ loading: true, error: null });
-      const response = await fetch('/api/posts');
-      const data = await response.json();
-      set({ posts: data, loading: false });
-    } catch (err) {
-      set({ error: 'Failed to fetch posts', loading: false });
-    }
-  },
-}));`}
+                  export const usePostsStore = create<PostsStore>((set) => ({
+                    posts: [],
+                    loading: false,
+                    error: null,
+                    fetchPosts: async () => {
+                      try {
+                        set({ loading: true, error: null });
+                        const response = await fetch('/api/posts');
+                        const data = await response.json();
+                        set({ posts: data, loading: false });
+                      } catch (err) {
+                        set({ error: 'Failed to fetch posts', loading: false });
+                      }
+                    },
+                  }));`}
                   </code>
                 </pre>
               </div>
